@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo Priority Manager</title>
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1><i class="fa-solid fa-list-check"></i> Nhiệm Vụ Ưu Tiên</h1>
+      <p class="subtitle">Quản lý công việc thông minh & khoa học</p>
+    </header>
+
+    <!-- Form Thêm Nhiệm Vụ -->
+    <section class="todo-form-section">
+      <form id="todo-form">
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="todo-input" 
+            placeholder="Nhập tên công việc cần làm..." 
+            required
+            maxlength="100"
+          >
+          <select id="priority-select" aria-label="Mức độ ưu tiên">
+            <option value="high">🔴 Cao (High)</option>
+            <option value="medium" selected>🟡 Trung bình (Medium)</option>
+            <option value="low">🟢 Thấp (Low)</option>
+          </select>
+          <button type="submit" id="add-btn">
+            <i class="fa-solid fa-plus"></i> Thêm
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Bộ Lọc & Thống Kê -->
+    <section class="filter-stats-section">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tất cả</button>
+        <button class="filter-btn" data-filter="high">🔴 Cao</button>
+        <button class="filter-btn" data-filter="medium">🟡 Trung bình</button>
+        <button class="filter-btn" data-filter="low">🟢 Thấp</button>
+        <button class="filter-btn" data-filter="completed">✔️ Đã xong</button>
+      </div>
+      <div class="stats">
+        <span id="pending-count">Chờ làm: 0</span>
+      </div>
+    </section>
+
+    <!-- Danh Sách Công Việc -->
+    <main class="todo-list-section">
+      <ul id="todo-list">
+        <!-- Các item sẽ được render động từ JS -->
+      </ul>
+      <div id="empty-state" class="empty-state hidden">
+        <i class="fa-regular fa-folder-open"></i>
+        <p>Không tìm thấy công việc nào phù hợp!</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+```
+
+---
